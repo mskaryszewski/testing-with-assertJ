@@ -15,5 +15,4 @@ public class AssertJTest {
 		final List<Integer> numbers = Lists.newArrayList(1, 2, 3);
 		assertThat(numbers).hasSize(3);
 	}
-
 }
