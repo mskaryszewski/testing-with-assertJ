@@ -39,9 +39,9 @@ public class AssertJTest {
 		final int TEN  = 10;
 		final int FIVE = 5;
 		assertThat(TEN)
-		.isGreaterThan(FIVE)
-		.isNotNegative()
-		.isNotZero();
+			.isGreaterThan(FIVE)
+			.isNotNegative()
+			.isNotZero();
 	}
 
 	/**
@@ -51,14 +51,14 @@ public class AssertJTest {
 	public void stringTest() {
 		final String NAME = "Michal";
 		assertThat(NAME)
-		.as("Name is %s", NAME)  // prints a nice message when fails
-		.isNotNull()
-		.isNotEmpty()
-		.isEqualTo(NAME)
-		.containsOnlyOnce("ic")
-		.doesNotContain("mic")
-		.endsWith("al")
-		.matches(Pattern.compile(NAME));
+			.as("Name is %s", NAME)  // prints a nice message when fails
+			.isNotNull()
+			.isNotEmpty()
+			.isEqualTo(NAME)
+			.containsOnlyOnce("ic")
+			.doesNotContain("mic")
+			.endsWith("al")
+			.matches(Pattern.compile(NAME));
 	}
 
 	/**
@@ -75,23 +75,23 @@ public class AssertJTest {
 
 		final List<String> strings = Lists.newArrayList(ONE, TWO, THREE);
 		assertThat(strings)
-		.contains(ONE)
-		.contains(TWO, atIndex(1))
-		.containsOnlyOnce(ONE, TWO)
-		.containsExactly(ONE, TWO, THREE)
-		.containsSequence(TWO, THREE)
-		.doesNotHaveDuplicates()
-		.doesNotContainNull()
-		.isNotNull()
-		.isNotEmpty()
-		.doesNotHaveDuplicates()
-		.hasSize(3)
-		.size()
-		.isGreaterThan(1)
-		.isLessThanOrEqualTo(3)
-		.isBetween(2, 4)
-		.returnToIterable()
-		.doesNotContain("FOUR");
+			.contains(ONE)
+			.contains(TWO, atIndex(1))
+			.containsOnlyOnce(ONE, TWO)
+			.containsExactly(ONE, TWO, THREE)
+			.containsSequence(TWO, THREE)
+			.doesNotHaveDuplicates()
+			.doesNotContainNull()
+			.isNotNull()
+			.isNotEmpty()
+			.doesNotHaveDuplicates()
+			.hasSize(3)
+			.size()
+				.isGreaterThan(1)
+				.isLessThanOrEqualTo(3)
+				.isBetween(2, 4)
+				.returnToIterable()
+			.doesNotContain("FOUR");
 	}
 
 	/**
@@ -101,7 +101,7 @@ public class AssertJTest {
 	public void filtersWithCollectionsTest() {
 
 		/**
-		 * Helpful local inner class showing usage of AssertJ's filters.
+		 * Class heping to show usage of AssertJ's filters.
 		 * 
 		 * @author Michal Skaryszewski
 		 *
@@ -124,10 +124,10 @@ public class AssertJTest {
 				bradPitt);
 
 		assertThat(actors)
-		.filteredOn("firstName",  "David")
-		.filteredOn("firstName",  notIn("Marc", "Kirk"))
-		.filteredOn("secondName", in("Duchowny", "Carradine"))
-		.containsOnly(davidDuchowny, davidCarradine);
+			.filteredOn("firstName",  "David")
+			.filteredOn("firstName",  notIn("Marc", "Kirk"))
+			.filteredOn("secondName", in("Duchowny", "Carradine"))
+			.containsOnly(davidDuchowny, davidCarradine);
 	}
 
 
@@ -141,9 +141,9 @@ public class AssertJTest {
 		final LocalDate beginningOfYear2002 = LocalDate.of(2002, Month.JANUARY, 1);
 
 		assertThat(beginningOfYear2001)
-		.isNotNull()
-		.isStrictlyBetween(beginningOfYear2000, beginningOfYear2002)
-		.isNotSameAs(beginningOfYear2000);
+			.isNotNull()
+			.isStrictlyBetween(beginningOfYear2000, beginningOfYear2002)
+			.isNotSameAs(beginningOfYear2000);
 	}
 
 	/**
@@ -152,14 +152,14 @@ public class AssertJTest {
 	@Test
 	public void exceptionTest() {
 		assertThatThrownBy(() -> { throw new Exception("Exception encountered!"); })
-		.isInstanceOf(Exception.class)
-		.hasMessageContaining("Exception");
+			.isInstanceOf(Exception.class)
+			.hasMessageContaining("Exception");
 
 		assertThatExceptionOfType(Exception.class)
-		.isThrownBy(() -> { throw new Exception("Exception encountered!"); })
-		.withMessage("%s", "Exception encountered!")
-		.withMessageContaining("Exception")
-		.withNoCause();
+			.isThrownBy(() -> { throw new Exception("Exception encountered!"); })
+			.withMessage("%s", "Exception encountered!")
+			.withMessageContaining("Exception")
+			.withNoCause();
 	}
 
 	/**
@@ -174,20 +174,20 @@ public class AssertJTest {
 		final List<String> strings = Lists.newArrayList("ONE", "TWO", "THREE");
 		SoftAssertions softly = new SoftAssertions();
 		softly.assertThat(strings)
-		.contains("ONE")
-		.containsOnlyOnce("ONE", "TWO")
-		.containsExactly("ONE", "TWO", "THREE")
-		.doesNotContainNull()
-		.isNotNull()
-		.isNotEmpty()
-		.doesNotHaveDuplicates()
-		.hasSize(3)
-		.size()
-		.isGreaterThan(1)
-		.isLessThanOrEqualTo(3)
-		.isBetween(2, 4)
-		.returnToIterable()
-		.doesNotContain("FOUR");
+			.contains("ONE")
+			.containsOnlyOnce("ONE", "TWO")
+			.containsExactly("ONE", "TWO", "THREE")
+			.doesNotContainNull()
+			.isNotNull()
+			.isNotEmpty()
+			.doesNotHaveDuplicates()
+			.hasSize(3)
+			.size()
+				.isGreaterThan(1)
+				.isLessThanOrEqualTo(3)
+				.isBetween(2, 4)
+				.returnToIterable()
+			.doesNotContain("FOUR");
 		softly.assertAll();
 	}
 
@@ -198,6 +198,6 @@ public class AssertJTest {
 	public void customAssertonTest() {
 		User user = new User("David");
 		assertThat(user)
-		.userDavid();
+			.userDavid();
 	}
 }
