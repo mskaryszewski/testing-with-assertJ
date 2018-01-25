@@ -31,13 +31,17 @@ import lombok.Data;
  */
 public class AssertJTest {
 
+	private final String ONE   = "ONE";
+	private final String TWO   = "TWO";
+	private final String THREE = "THREE";
+	private final int TEN      = 10;
+	private final int FIVE     = 5;
+	
 	/**
 	 * Basic tests of ints with AssertJ.
 	 */
 	@Test
 	public void integerTest() {
-		final int TEN  = 10;
-		final int FIVE = 5;
 		assertThat(TEN)
 			.isGreaterThan(FIVE)
 			.isNotNegative()
@@ -69,10 +73,6 @@ public class AssertJTest {
 	 */
 	@Test
 	public void collectionTest() {
-		final String ONE = "ONE";
-		final String TWO = "TWO";
-		final String THREE = "THREE";
-
 		final List<String> strings = Lists.newArrayList(ONE, TWO, THREE);
 		assertThat(strings)
 			.contains(ONE)
@@ -171,12 +171,12 @@ public class AssertJTest {
 	 */
 	@Test
 	public void softAssertionTest() {
-		final List<String> strings = Lists.newArrayList("ONE", "TWO", "THREE");
+		final List<String> strings = Lists.newArrayList(ONE, TWO, THREE);
 		SoftAssertions softly = new SoftAssertions();
 		softly.assertThat(strings)
-			.contains("ONE")
-			.containsOnlyOnce("ONE", "TWO")
-			.containsExactly("ONE", "TWO", "THREE")
+			.contains(ONE)
+			.containsOnlyOnce(ONE, TWO)
+			.containsExactly(ONE, TWO, THREE)
 			.doesNotContainNull()
 			.isNotNull()
 			.isNotEmpty()
