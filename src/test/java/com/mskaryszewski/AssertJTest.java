@@ -101,7 +101,7 @@ public class AssertJTest {
 	public void filtersWithCollectionsTest() {
 
 		/**
-		 * Class heping to show usage of AssertJ's filters.
+		 * Class helping to show usage of AssertJ's filters.
 		 * 
 		 * @author Michal Skaryszewski
 		 *
