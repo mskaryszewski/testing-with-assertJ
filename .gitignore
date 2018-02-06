@@ -29,6 +29,12 @@ tmp/
 *.bak
 *.swp
 local.properties
+
+# eclipse
 .settings/
 .project
 .classpath
+
+# IntelliJ IDEA
+.idea
+*.iml
