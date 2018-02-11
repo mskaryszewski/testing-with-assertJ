@@ -23,7 +23,7 @@ import lombok.Data;
 
 /**
  * Basic test class showing convenience of testing with AssertJ.
- * 
+ *
  * @author  Michal Skaryszewski
  * @version 0.1
  * @since   0.1
@@ -102,7 +102,7 @@ public class AssertJTest {
 
 		/**
 		 * Class helping to show usage of AssertJ's filters.
-		 * 
+		 *
 		 * @author Michal Skaryszewski
 		 *
 		 */
