@@ -1,3 +1,3 @@
 # testing-with-assertJ
-Testing with AssertJ assertions
+Testing with AssertJ, cucumber and Awaitility
 
