@@ -35,15 +35,21 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			    <groupId>info.cukes</groupId>
-			    <artifactId>cucumber-java</artifactId>
-			    <version>1.2.5</version>
-			    <scope>test</scope>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<version>3.0.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
